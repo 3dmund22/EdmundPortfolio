@@ -1,4 +1,4 @@
- .home-page{
+.home-page{
     .text-zone{
         position: absolute;
         left: 10%;
@@ -11,19 +11,32 @@
     h1{
         color: #fff;
         font-size: 53px;
+        line-height: 53px;
         margin: 0;
         font-family: 'Coolvetica';
         font-weight: 400;
 
         &::before{
             content: '<h1>';
+            font-family: 'La Belle Aurore', cursive;
             color: #ffd700;
             font-size: 18px;
             position: absolute;
             margin-top: -40px;
-            left:15px;
+            left: -15px;
             opacity: 0.6;
         }
+        &:after {
+            content: '</h1>';
+            font-family: 'La Belle Aurore', cursive;
+            color: #ffd700;
+            font-size: 18px;
+            position: absolute;
+            margin-top: 15px;
+            margin-left: 20px;
+            animation: fadeIn 1s 1.7s backwards;
+            opacity: 0.6;
+          }
         img{
             width: 32px;
             margin-left: 20px;
@@ -62,5 +75,28 @@ h2{
     &:hover{
         background: #ffd700;
         color: #333
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .tags,
+    .home-page h1:before,
+    .home-page h1:after {
+      display: none;
+    }
+  
+    .home-page .text-zone {
+      position: initial;
+      width: 100%;
+      transform: none;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  
+    .home-page .flat-button {
+      float: none;
+      display: block;
+      margin: 20px auto 0 auto;
+      width: 124px;
     }
 }
